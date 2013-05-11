@@ -18,3 +18,5 @@ for i in range(1000000):
     chainLength = len(genChain(i))
     if( chainLength> longestChain):
         longestChain =chainLength
+
+##test
