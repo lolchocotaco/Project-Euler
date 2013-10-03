@@ -102,4 +102,4 @@ numStr = """37107287533902102798797998220837590246510135740250
 53503534226472524250874054075591789781264330331690"""
 
 numbers = map(int, numStr.split())  #Because python can
-print("First 10 digits of sum: %s") %( str(sum(numbers))[:10])
+print("First 10 digits of sum: %s" %( str(sum(numbers))[:10]) )

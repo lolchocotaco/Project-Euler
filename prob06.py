@@ -3,4 +3,4 @@
 
 sumSquare = sum([x*x for x in range(1,101)])
 squareSum = sum(range(1,101))**2
-print("Difference: %d")%(squareSum- sumSquare)
+print("Difference: %d" %(squareSum- sumSquare) )

@@ -2,6 +2,7 @@
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20xs20 grid?
 import numpy as np
 import operator as op
+import functools
 from numpy.ma.core import max
 gridStr = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
@@ -37,7 +38,7 @@ def findBigProd(matrix):
     largeProd = 0
     for i in range(16):
         for j in range(16):
-            newSum = reduce(op.mul, matrix[i,j:j+4:1])
+            newSum = functools.reduce(op.mul, matrix[i,j:j+4:1])
             if (newSum>largeProd):
                 largeProd = newSum
     return largeProd
@@ -48,14 +49,14 @@ def findProdDiag(matrix):
     diag = np.diag_indices(4)
     for i in range(16):
         for j in range(16):
-            newProd = reduce(op.mul,matrix[i:i+4:1,j:j+4:1][diag])
+            newProd = functools.reduce(op.mul,matrix[i:i+4:1,j:j+4:1][diag])
             if(newProd>bigProd):
                 bigProd = newProd
     return bigProd
 
 
 largestProd = max([findBigProd(gridMat), findBigProd(np.transpose(gridMat)), findProdDiag(gridMat), findProdDiag(np.fliplr(gridMat)) ])
-print("Largest Product of 4 adjacent indices: {0}").format(largestProd)
+print("Largest Product of 4 adjacent indices: {0}".format(largestProd) )
 
 #Code is cumbersome and makes too many function calls.
 # TODO: Make one single function

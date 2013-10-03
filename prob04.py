@@ -17,4 +17,4 @@ for i in range(startNum,stopNum):
                 pDrome = product
                 
                 
-print("Largest 3-digit Palindrome: %d") %(pDrome)
+print("Largest 3-digit Palindrome: %d" %(pDrome) )

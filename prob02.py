@@ -16,8 +16,8 @@ fibNum = 0
 fibSum = 0  
 #Generate Fib numbers and sum them if even.
 while fibNum< fibMax:
-    fibNum = fibSeq.next()
+    fibNum = next(fibSeq)
     if(fibNum%2 == 0):
         fibSum +=fibNum
 
-print ("Sum of even Fibonacci Numbers: %d") %(fibSum)
+print ("Sum of even Fibonacci Numbers: %d" %(fibSum))

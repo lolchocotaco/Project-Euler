@@ -18,7 +18,7 @@ def nums():
 triGen = nums()         
 triangNum = 1;
 while(numFactors(triangNum)<500):
-    triangNum = triGen.next()
+    triangNum = next(triGen)
     
     
-print("Highly divisible triangular number: {0}").format(triangNum)
+print("Highly divisible triangular number: {0}".format(triangNum))
